@@ -14,6 +14,7 @@ app.post('/mention/:threadId', (req, res) => {
   const threadId = req.params.threadId;
   let { message = '@everyone', state } = req.body;
   message = message.length ? message : '@everyone';
+  console.log(state);
   state = JSON.parse(state);
 
   login({ appState: state }, (err, api) => {
